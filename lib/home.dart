@@ -1,3 +1,4 @@
+import 'package:customize_console/core/global_widget/custom_textfiled.dart';
 import 'package:customize_console/pretty_logger.dart';
 import 'package:flutter/material.dart';
 
@@ -37,8 +38,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     printJson();
 
-    return const Scaffold(
-      body: Center(child: Text("Check Console for JSON Output")),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            SizedBox(height: 100),
+            CustomTextfield(
+              hintext: 'Enter your email',
+              prefixIconPath: 'assets/icons/email.svg',
+            ),
+            Center(child: Text("Check Console for JSON Output")),
+          ],
+        ),
+      ),
     );
   }
 }
